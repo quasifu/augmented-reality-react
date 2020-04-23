@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ARPage from "../ARPage";
 import axios from "axios";
 
 export default function LabelsList(props) {
