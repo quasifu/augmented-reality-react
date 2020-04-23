@@ -106,3 +106,4 @@ dist
 .npmcache
 package-lock.json
 yarn.lock
+build
