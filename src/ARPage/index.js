@@ -27,11 +27,11 @@ export default class ARPage extends React.Component {
     );
     camera.setPosition(new BABYLON.Vector3(0, 10, 5));
     camera.attachControl(canvas, true);
-    // var light = new BABYLON.HemisphericLight(
-    //   "light1",
-    //   new BABYLON.Vector3(0, 1, 0),
-    //   scene
-    // );
+    var light = new BABYLON.HemisphericLight(
+      "light1",
+      new BABYLON.Vector3(0, 1, 0),
+      scene
+    );
 
     var ground = BABYLON.Mesh.CreateGround("ground1", 6, 6, 2, scene);
     var groundMaterial = new BABYLON.StandardMaterial("ground", scene);
