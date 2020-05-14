@@ -8,7 +8,7 @@ export default function LabelsList(props) {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios("/api/v1/labels");
-      console.log(result.data);
+      // console.log(result.data);
       setData(result.data);
     };
     fetchData();
