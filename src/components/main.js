@@ -2,7 +2,6 @@ import React from "react";
 import { Main, Box } from "grommet";
 import Switch from "../constants/switch";
 import BackgroundTriangle from "./images/backgroundTriangle";
-import { AVERY_DENNISON } from "../constants/theme";
 
 export default function Terms(props) {
   return (

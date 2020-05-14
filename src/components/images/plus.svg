@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Circle Plus Dark Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0.0438372093 19.9560266 0.0438372093 19.9560266 20 0 20"></polygon>
+        <polygon id="path-3" points="0 20 20 20 20 0 0 0"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Tearsheet" transform="translate(-341.000000, -165.000000)">
+            <g id="Circle-Plus-Dark-Icon" transform="translate(351.000000, 175.000000) rotate(45.000000) translate(-351.000000, -175.000000) translate(336.000000, 160.000000)">
+                <g id="Circle-X-Dark-Icon" transform="translate(15.000000, 15.000000) rotate(45.000000) translate(-15.000000, -15.000000) translate(5.000000, 5.000000)">
+                    <g id="Group-3">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M18.4044562,10.0451395 C18.4129302,5.3964186 14.6401395,1.60304651 10.0007209,1.5955933 C5.3497907,1.58804651 1.55955814,5.35746512 1.55163911,9.99827907 C1.54386047,14.6481628 5.31467442,18.4404884 9.95386047,18.4482911 C14.6024651,18.4560698 18.3958372,14.6839767 18.4044562,10.0451395 M-2.31939e-05,9.98967442 C0.0167674419,4.44897674 4.49397674,0.0128139535 10.037814,0.0438135642 C15.5536279,0.0750232558 19.9767674,4.53862791 19.9560266,10.0526977 C19.9351395,15.5724651 15.4901395,20.0023488 9.97467442,20.0000242 C4.43316279,19.9975814 -0.0166046512,15.532 -2.31939e-05,9.98967442" id="Fill-1" fill="#D4D4D4" mask="url(#mask-2)"></path>
+                    </g>
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <g id="Clip-5"></g>
+                    <polygon id="Fill-4" fill="#D4D4D4" mask="url(#mask-4)" points="9.05660377 14.7169811 10.9433962 14.7169811 10.9433962 5.28301887 9.05660377 5.28301887"></polygon>
+                    <polygon id="Fill-6" fill="#D4D4D4" mask="url(#mask-4)" points="5.28301887 10.9433962 14.7169811 10.9433962 14.7169811 9.05660377 5.28301887 9.05660377"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

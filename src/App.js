@@ -14,7 +14,7 @@ const userTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
   ? "dark"
   : "light";
 
-const height = window.innerHeight;
+//const height = window.innerHeight;
 
 function App() {
   const [user, setUser] = useState({
@@ -26,7 +26,7 @@ function App() {
   });
 
   const value = useMemo(() => ({ user, setUser }), [user, setUser]);
-  const [sidebar, setSidebar] = useState(true);
+  const [sidebar] = useState(true);
   // TODO: should utilize userTheme more that its being passed down to all top level components
 
   return (

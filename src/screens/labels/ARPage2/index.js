@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import "@babylonjs/inspector";
-import { Engine, Scene, EnvironmentHelper } from "react-babylonjs";
-import { Vector3, Color3 } from "@babylonjs/core";
+import { Engine, Scene } from "react-babylonjs";
+import { Vector3, Color3, Color4 } from "@babylonjs/core";
 import { ActionManager, SetValueAction } from "@babylonjs/core/Actions";
 import ScaledModelWithProgress from "../ScaledModelWithProgress";
 import { Box } from "grommet";
@@ -78,9 +78,9 @@ class ARPage2 extends Component {
           antialias
           adaptToDeviceRatio
           canvasId="babylonJS"
-          style={{ outline: "none" }}
+          canvasStyle={{ outline: "none" }}
         >
-          <Scene>
+          <Scene clearColor={new Color4(255, 255, 255, 0)}>
             <arcRotateCamera
               name="camera1"
               alpha={Math.PI / 2}
@@ -103,7 +103,6 @@ class ARPage2 extends Component {
               center={new Vector3(2.5, 0, 0)}
               onModelLoaded={this.onModelLoaded}
             />
-            <EnvironmentHelper setMainColor={[Color3.White()]} />
           </Scene>
         </Engine>
       </Box>

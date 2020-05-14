@@ -53,7 +53,7 @@ export const AVERY_DENNISON = {
       "status-ok": "#00C781",
       "status-unknown": "#CCCCCC",
       "status-disabled": "#CCCCCC",
-      focus: "#6FFFB0",
+      focus: "none",
       orange: "#de6e4b",
       green: "#26413c",
       "graph-0": {
@@ -181,6 +181,7 @@ export const AVERY_DENNISON = {
       vertical: "4px",
       horizontal: "22px",
     },
+    active: "#46C1B3",
   },
   checkBox: {
     check: {

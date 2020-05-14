@@ -1,43 +1,35 @@
-import React from "react";
-import {
-  Button,
-  Box,
-  grommet,
-  Grommet,
-  Nav,
-  Stack,
-  Text,
-  Sidebar,
-  Image,
-} from "grommet";
+import React, { useState } from "react";
+import { Button, Box, Nav, Sidebar, Image } from "grommet";
 
-import {
-  Analytics,
-  Chat,
-  Clock,
-  Configure,
-  Help,
-  Projects,
-  Split,
-  StatusInfoSmall,
-} from "grommet-icons";
+import { Chat, Help } from "grommet-icons";
 
-import { Link } from "react-router-dom";
-import logo from "./images/logo.png";
-
+import { useHistory } from "react-router-dom";
+import Logo from "./images/logo.svg";
+import HomeIcon from "../components/images/home.svg";
+import OrdersIcon from "../components/images/orders.svg";
+import ADesignIcon from "../components/images/adesign.svg";
 import { AVERY_DENNISON } from "../constants/theme";
 
 const SidebarHeader = () => (
-  <Box align="center" gap="small" direction="row" margin={{ bottom: "large" }}>
-    <Image src={logo} />
+  <Box
+    align="center"
+    alignContent="center"
+    pad="medium"
+    direction="row"
+    margin={{ bottom: "large" }}
+  >
+    <Image src={Logo} />
   </Box>
 );
 
-const SidebarButton = ({ icon, label, link, ...rest }) => (
-  <Box pad="small" hoverIndicator onClick={() => {}}>
-    <Link to={link}>
-      <Button alignSelf="start" plain icon={icon} label={label} {...rest} />
-    </Link>
+const SidebarButton = ({ icon, name, link, hover, click, active, ...rest }) => (
+  <Box
+    pad="small"
+    hoverIndicator
+    background={active && AVERY_DENNISON.button.active}
+    onClick={click}
+  >
+    <Button alignSelf="start" plain icon={icon} label={name} {...rest} />
   </Box>
 );
 
@@ -48,15 +40,33 @@ const SidebarFooter = () => (
   </Nav>
 );
 
-const MainNavigation = () => (
+const MainNavigation = ({ active, setActive, history, ...rest }) => (
   <Nav responsive={false}>
-    <SidebarButton icon={<StatusInfoSmall />} label="Dashboard" />
+    {[
+      { name: "Dashboard", icon: <Image src={HomeIcon} />, link: "/" },
+      { name: "My Orders", icon: <Image src={OrdersIcon} />, link: "/" },
+      { name: "ADesign", icon: <Image src={ADesignIcon} />, link: "/adesign" },
+    ].map((label) => (
+      <SidebarButton
+        key={label.name}
+        name={label.name}
+        icon={label.icon}
+        active={label.name === active}
+        click={() => {
+          setActive(label.name);
+          history.push(label.link);
+        }}
+      />
+    ))}
+    {/* <SidebarButton icon={<StatusInfoSmall />} label="Dashboard" />
     <SidebarButton icon={<Projects />} label="My Orders" />
-    <SidebarButton icon={<Clock />} label="ADesign" link="/" />
+    <SidebarButton icon={<Clock />} label="ADesign" link="/" /> */}
   </Nav>
 );
 
 export default function Menu() {
+  const [active, setActive] = useState();
+  let history = useHistory();
   return (
     <Sidebar
       style={{ zIndex: 1 }}
@@ -66,7 +76,7 @@ export default function Menu() {
       footer={<SidebarFooter />}
       pad={{ left: "none", right: "none", vertical: "none" }}
     >
-      <MainNavigation />
+      <MainNavigation active={active} setActive={setActive} history={history} />
     </Sidebar>
   );
 }

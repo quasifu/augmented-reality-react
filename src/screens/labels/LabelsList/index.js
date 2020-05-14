@@ -1,16 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {
-  Button,
-  Box,
-  grommet,
-  Grommet,
-  Nav,
-  Stack,
-  Text,
-  Sidebar,
-  Image,
-} from "grommet";
+import { Button, Box } from "grommet";
 import { Link } from "react-router-dom";
 
 export default function LabelsList(props) {
