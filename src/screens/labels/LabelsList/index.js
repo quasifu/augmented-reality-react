@@ -1,5 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import {
+  Button,
+  Box,
+  grommet,
+  Grommet,
+  Nav,
+  Stack,
+  Text,
+  Sidebar,
+  Image,
+} from "grommet";
+import { Link } from "react-router-dom";
 
 export default function LabelsList(props) {
   const [data, setData] = useState([]);
@@ -13,17 +25,19 @@ export default function LabelsList(props) {
   }, []);
 
   return (
-    <div>
+    <Box direction="column">
       {data
         ? data.map((item) => (
-            <button
-              onClick={(e) => props.selectLabel(item.value.name)}
-              key={item.value.name}
-            >
-              {item.value.name}
-            </button>
+            <Link to={`/adesign/${item.value.name}`}>
+              <Button
+                style={{ margin: "10px" }}
+                primary
+                key={item.value.name}
+                label={item.value.name}
+              />
+            </Link>
           ))
         : null}
-    </div>
+    </Box>
   );
 }
