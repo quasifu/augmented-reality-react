@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Box, Heading, Image } from "grommet";
+import { Grid, Box, Heading, Image, Header } from "grommet";
 import ARPage2 from "./labels/ARPage2";
 import { useParams } from "react-router-dom";
 import ProjectDetails from "../components/images/project-details.svg";
@@ -39,7 +39,11 @@ export default function LabelDesigner() {
         fill
       >
         <Box gridArea="header">
-          <Heading>{label}</Heading>
+          <Header pad="small">
+            <Heading level={2} size={"medium"} margin="none">
+              {label}
+            </Heading>
+          </Header>
         </Box>
 
         <Box gridArea="left">

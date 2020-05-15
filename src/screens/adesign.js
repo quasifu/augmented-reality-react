@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Box, Heading, Image, Text, Button } from "grommet";
+import { Grid, Box, Heading, Image, Text, Button, Header } from "grommet";
 import ADesignDarkIcon from "../components/images/adesign-dark.svg";
 import ArtworkIcon from "../components/images/artwork.svg";
 import PlusIcon from "../components/images/plus.svg";
@@ -10,7 +10,7 @@ export default function ADesign() {
   return (
     <Box pad="small" gap="small" fill>
       <Grid
-        rows={["1/4", "flex"]}
+        rows={["auto", "1/4", "flex"]}
         columns={["flex", "flex"]}
         areas={[
           {
@@ -19,22 +19,34 @@ export default function ADesign() {
             end: [1, 0],
           },
           {
-            name: "left",
+            name: "banner",
             start: [0, 1],
-            end: [0, 1],
+            end: [1, 1],
+          },
+          {
+            name: "left",
+            start: [0, 2],
+            end: [0, 2],
           },
           {
             name: "right",
-            start: [1, 1],
-            end: [1, 1],
+            start: [1, 2],
+            end: [1, 2],
           },
         ]}
         gap="small"
         pad={{ bottom: "small" }}
         fill
       >
+        <Box gridArea="header">
+          <Header pad="small">
+            <Heading level={2} size={"medium"} margin="none">
+              ADesign
+            </Heading>
+          </Header>
+        </Box>
         <Box
-          gridArea="header"
+          gridArea="banner"
           round="medium"
           background="rgba(255,255,255,.5)"
           direction="row"
