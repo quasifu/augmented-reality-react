@@ -10,6 +10,14 @@ export const AVERY_DENNISON = {
         dark: "#1a1d1a",
         light: "#E9E9E9",
       },
+      "primary-button": {
+        dark: "#111311",
+        light: "linear-gradient(180deg, #4FD7C8 0%, #319388 84%)",
+      },
+      "active-primary-button": {
+        dark: "#111311",
+        light: "linear-gradient(180deg, #2F8076 0%, #1D5851 84%)",
+      },
       "background-strong": {
         dark: "#111311",
         light: "#ffffff",
@@ -28,7 +36,7 @@ export const AVERY_DENNISON = {
       },
       text: {
         dark: "#EEEEEE",
-        light: "#1a1d1a",
+        light: "#5A595C",
       },
       "text-strong": {
         dark: "#FFFFFF",

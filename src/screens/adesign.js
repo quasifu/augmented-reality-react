@@ -46,10 +46,12 @@ export default function ADesign() {
             </Heading>
             <Text size="xsmall">Lorem ipsem....</Text>
             <Button
-              primary
-              label="Get started"
+              style={{ color: "#FFF", border: "none" }}
+              color="primary-button"
+              hoverIndicator="active-primary-button"
+              label="Explore now"
               size="small"
-              active
+              primary
               onClick={() => {}}
             />
           </Box>
@@ -60,10 +62,12 @@ export default function ADesign() {
             </Heading>
             <Text size="xsmall">Lorem ipsem....</Text>
             <Button
-              primary
-              label="Get started"
+              style={{ color: "#FFF", border: "none" }}
+              color="primary-button"
+              hoverIndicator="active-primary-button"
+              label="Go to upload"
               size="small"
-              active
+              primary
               onClick={() => {}}
             />
           </Box>
@@ -74,10 +78,12 @@ export default function ADesign() {
             </Heading>
             <Text size="xsmall">Lorem ipsem....</Text>
             <Button
+              style={{ color: "#FFF", border: "none" }}
               primary
-              label="Get started"
+              color="primary-button"
+              hoverIndicator="active-primary-button"
+              label="Reach out"
               size="small"
-              active
               onClick={() => {}}
             />
           </Box>
@@ -87,28 +93,30 @@ export default function ADesign() {
           <Box
             margin={{ bottom: "small" }}
             round="medium"
-            background="linear-gradient(180deg, #4FD7C8 0%, #319388 84%)"
+            background="primary-button"
+            hoverIndicator="active-primary-button"
             pad="medium"
+            gap="small"
             height="xsmall"
             align="center"
-            hoverIndicator
+            justify="center"
+            alignContent="center"
+            direction="row"
             onClick={() => {}}
           >
-            <Image src={PlusIcon} /> <Text color="white">Start a new item</Text>
+            <Image src={PlusIcon} height="100%" />
+            <Text size="large" weight="bold" color="white">
+              Start New Item
+            </Text>
           </Box>
 
-          <Box
-            gap="small"
-            round="medium"
-            background="white"
-            pad="medium"
-            flex
-            overflow="scroll"
-          >
-            <Heading level="4" size="medium">
+          <Box round="medium" background="white" pad="medium" flex>
+            <Heading level="4" size="medium" pad="small">
               Your Projects
             </Heading>
-            <LabelsList />
+            <Box fill overflow="scroll">
+              <LabelsList />
+            </Box>
           </Box>
         </Box>
 
