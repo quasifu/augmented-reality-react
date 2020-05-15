@@ -2,7 +2,7 @@ import * as React from "react";
 import * as BABYLON from "babylonjs";
 import BabylonScene from "../BabylonScene"; // import the component above linking to file we just created.
 import "babylonjs-loaders";
-
+import { withRouter } from "react-router-dom";
 const containerStyle = {
   flex: 1,
   flexDirection: "row",
@@ -11,7 +11,7 @@ const containerStyle = {
 //   flex: 1,
 // };
 
-export default class ARPage extends React.Component {
+class ARPage extends React.Component {
   onSceneMount = (e) => {
     const { canvas, scene, engine } = e;
 
@@ -47,11 +47,11 @@ export default class ARPage extends React.Component {
     );
     gizmo.ignoreChildren = true;
 
-    console.log("onSceneMount", this.props.label);
+    console.log("onSceneMount", this.props.match.params.label);
     // Import gltf model
     BABYLON.SceneLoader.ImportMesh(
       "",
-      `/api/v1/labels/${this.props.label}`,
+      `/api/v1/labels/${this.props.match.params.label}`,
       "",
       scene,
       function (container) {
@@ -87,15 +87,14 @@ export default class ARPage extends React.Component {
   };
 
   render() {
-    console.log("ARPage", this.props.label);
     return (
-      <div style={containerStyle}>
-        <BabylonScene
-          onSceneMount={this.onSceneMount}
-          width={1024}
-          height={768}
-        />
-      </div>
+      <BabylonScene
+        onSceneMount={this.onSceneMount}
+        width="100%"
+        height="100%"
+      />
     );
   }
 }
+
+export default withRouter(ARPage);
