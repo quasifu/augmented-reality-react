@@ -1,12 +1,21 @@
-import React from "react";
-import { Grid, Box, Heading, Image, Header } from "grommet";
+import React, { useState } from "react";
+import { Grid, Box, Heading, Image, Header, Button, Layer } from "grommet";
 import ARPage2 from "./labels/ARPage2";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import ProjectDetails from "../components/images/project-details.svg";
 import ProjectDetailsRight from "../components/images/project-details-right.svg";
+import SendToPhoneIcon from "../components/images/sendToPhone.svg";
+import QRCode from "../components/QRCode.js";
 
 export default function LabelDesigner() {
   let { label } = useParams();
+  const [showLayer, setShowLayer] = useState(false);
+  label = label.substring(0, label.indexOf(".gltf"));
+  let location = useLocation();
+  let host = window.location.href.substring(
+    0,
+    window.location.href.indexOf(location.pathname)
+  );
   return (
     <Box pad="small" gap="small" fill>
       <Grid
@@ -60,13 +69,29 @@ export default function LabelDesigner() {
         </Box>
 
         <Box gridArea="middle">
-          <ARPage2 label={label} />
+          <ARPage2 label={`${label}.gltf`} />
+          <Box direction="row">
+            <Button
+              primary
+              color="white"
+              plain={false}
+              border={{ color: "#D6D6D6" }}
+              icon={<Image src={SendToPhoneIcon} width="50%" />}
+              onClick={() => setShowLayer(true)}
+            />
+          </Box>
         </Box>
 
         <Box gridArea="right">
           <Image src={ProjectDetailsRight} fill />
         </Box>
       </Grid>
+      {showLayer && (
+        <QRCode
+          url={`${host}/api/v1/labels/${label}.usdz`}
+          setShowLayer={setShowLayer}
+        />
+      )}
     </Box>
   );
 }
