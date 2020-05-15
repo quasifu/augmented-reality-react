@@ -2,10 +2,10 @@ import React from "react";
 import { Grid, Box, Heading, Image, Text, Button } from "grommet";
 import ADesignDarkIcon from "../components/images/adesign-dark.svg";
 import ArtworkIcon from "../components/images/artwork.svg";
-import ProjectDetailsRight from "../components/images/project-details-right.svg";
 import PlusIcon from "../components/images/plus.svg";
 import GetStartedIcon from "../components/images/get-started.svg";
 import LabelsList from "./labels/LabelsList";
+import PersonImage from "../components/images/person.svg";
 export default function ADesign() {
   return (
     <Box pad="small" gap="small" fill>
@@ -36,7 +36,7 @@ export default function ADesign() {
         <Box
           gridArea="header"
           round="medium"
-          background="white"
+          background="rgba(255,255,255,.5)"
           direction="row"
         >
           <Box flex border="right" pad="small" align="center" margin="small">
@@ -112,8 +112,21 @@ export default function ADesign() {
           </Box>
         </Box>
 
-        <Box gridArea="right">
-          <Image src={ProjectDetailsRight} fill />
+        <Box
+          gridArea="right"
+          overflow={{ horizontal: "hidden", vertical: "scroll" }}
+          style={{ position: "relative" }}
+        >
+          <Image
+            src={PersonImage}
+            fill
+            style={{
+              position: "absolute",
+              zIndex: "-1",
+              right: "-100px",
+              bottom: "20px",
+            }}
+          />
         </Box>
       </Grid>
     </Box>
