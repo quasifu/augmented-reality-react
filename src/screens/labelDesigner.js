@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Grid, Box, Heading, Image, Header, Button, Layer } from "grommet";
+import { Grid, Box, Heading, Image, Header, Button } from "grommet";
 import ARPage2 from "./labels/ARPage2";
 import { useParams, useLocation } from "react-router-dom";
 import ProjectDetails from "../components/images/project-details.svg";
