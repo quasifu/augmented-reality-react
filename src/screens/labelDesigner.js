@@ -64,7 +64,7 @@ export default function LabelDesigner() {
             flex
             overflow="scroll"
           >
-            <Image src={ProjectDetails} width="100%" />
+            Starting to fill in images
           </Box>
         </Box>
 
