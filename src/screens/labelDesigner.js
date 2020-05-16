@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Grid, Box, Heading, Image, Header, Button } from "grommet";
 import ARPage2 from "./labels/ARPage2";
 import { useParams, useLocation } from "react-router-dom";
-import ProjectDetails from "../components/images/project-details.svg";
+//import ProjectDetails from "../components/images/project-details.svg";
 import ProjectDetailsRight from "../components/images/project-details-right.svg";
 import SendToPhoneIcon from "../components/images/sendToPhone.svg";
 import QRCode from "../components/QRCode.js";
