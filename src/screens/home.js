@@ -75,7 +75,7 @@ export default function Home() {
               </Text>
             </Box>
           </Box>
-          <Box>
+          <Box flex>
             <Image height="100%" src={ChartImage} />
           </Box>
         </Box>
