@@ -1,20 +1,9 @@
 import React, { useState, useEffect } from "react";
-import {
-  Grid,
-  Box,
-  Heading,
-  Image,
-  Header,
-  Button,
-  Accordion,
-  AccordionPanel,
-  Text,
-} from "grommet";
+import { Grid, Box, Heading, Image, Header, Button } from "grommet";
 import axios from "axios";
-import ARPage2 from "./labels/ARPage2";
 import { useParams, useLocation } from "react-router-dom";
-//import ProjectDetails from "../components/images/project-details.svg";
-import ProjectDetailsRight from "../components/images/project-details-right.svg";
+import LeftPane from "./labeldesigner/leftPane.js";
+import RightPane from "./labeldesigner/rightPane.js";
 import SendToPhoneIcon from "../components/images/sendToPhone.svg";
 import QRCode from "../components/QRCode.js";
 
@@ -77,61 +66,11 @@ export default function LabelDesigner() {
         </Box>
 
         <Box gridArea="left">
-          <Box gap="small" round="medium" background="white" pad="medium" flex>
-            <Heading level={3} margin="none">
-              {metadata.projectName}
-            </Heading>
-            <Heading level={6} margin="none">
-              {metadata.itemName}
-            </Heading>
-            <Heading level={6} margin="none" background="red">
-              {metadata.id}
-            </Heading>
-            <Box direction="row" border="horizontal" pad="small">
-              <Box flex border="right" pad={{ horizontal: "small" }}>
-                <Button
-                  style={{ color: "#FFF", border: "none" }}
-                  primary
-                  color="primary-button"
-                  hoverIndicator="active-primary-button"
-                  label="Front"
-                  size="small"
-                  onClick={() => {}}
-                />
-              </Box>
-              <Box flex pad={{ horizontal: "small" }}>
-                <Button
-                  primary
-                  color="tertiary-button"
-                  hoverIndicator="active-primary-button"
-                  label="Back"
-                  size="small"
-                  onClick={() => {}}
-                />
-              </Box>
-            </Box>
-            <Box overflow="scroll">
-              <Accordion>
-                {[
-                  "Size",
-                  "Hang hole",
-                  "Corners",
-                  "Logo/Image",
-                  "Application",
-                ].map((item) => (
-                  <AccordionPanel label={item} key={item}>
-                    <Box pad="medium">
-                      <Text>{item}</Text>
-                    </Box>
-                  </AccordionPanel>
-                ))}
-              </Accordion>
-            </Box>
-          </Box>
+          <LeftPane metadata={metadata} />
         </Box>
 
         <Box gridArea="middle">
-          <ARPage2 label={`${label}.gltf`} />
+          Something goes here
           <Box direction="row">
             <Button
               primary
@@ -145,7 +84,7 @@ export default function LabelDesigner() {
         </Box>
 
         <Box gridArea="right">
-          <Image src={ProjectDetailsRight} fill />
+          {metadata ? <RightPane metadata={metadata} label={label} /> : null}
         </Box>
       </Grid>
       {showLayer && (
