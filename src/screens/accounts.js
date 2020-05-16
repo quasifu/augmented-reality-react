@@ -14,23 +14,23 @@ export default function Accounts() {
           {
             name: "header",
             start: [0, 0],
-            end: [1, 0],
+            end: [1, 0]
           },
           {
             name: "left",
             start: [0, 1],
-            end: [0, 1],
+            end: [0, 1]
           },
           {
             name: "right",
             start: [1, 1],
-            end: [1, 1],
+            end: [1, 1]
           },
           {
             name: "body",
             start: [0, 2],
-            end: [1, 2],
-          },
+            end: [1, 2]
+          }
         ]}
         gap="small"
         pad={{ bottom: "small" }}
@@ -71,7 +71,7 @@ export default function Accounts() {
               </Text>
             </Box>
           </Box>
-          <Box>
+          <Box flex>
             <Image height="100%" src={ChartImage} />
           </Box>
         </Box>
