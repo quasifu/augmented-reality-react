@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Box, Heading, Image, TextInput, Header } from "grommet";
+import { Grid, Box, Heading, Image, TextInput, Header, Text } from "grommet";
 import { Down } from "grommet-icons";
 import ADesignDarkIcon from "../components/images/adesign-dark.svg";
 import ArtworkIcon from "../components/images/artwork.svg";
@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <Box pad="small" gap="small" fill>
       <Grid
-        rows={["auto", "1/4", "flex"]}
+        rows={["auto", "flex", "flex"]}
         columns={["flex", "flex"]}
         areas={[
           {
@@ -48,6 +48,7 @@ export default function Home() {
         </Box>
 
         <Box
+          direction="column"
           gridArea="left"
           round="medium"
           background="rgba(255,255,255,.5)"
@@ -55,29 +56,35 @@ export default function Home() {
           background="white"
           justify="between"
         >
-          <Box direction="row">
+          <Box direction="row" height={{ min: "46px" }} justify="between">
             <Box>
               <TextInput
                 icon={<Down />}
                 style={{ borderRadius: "20px" }}
                 reverse
                 size="xsmall"
-                round="medium"
                 placeholder="All your accounts"
               />
             </Box>
-            <Box></Box>
+            <Box>
+              <Text size="small" textAlign="end">
+                Health: Good + 1.7%
+              </Text>
+              <Text size="xsmall" textAlign="end">
+                View Reports
+              </Text>
+            </Box>
           </Box>
           <Box>
-            <Image src={ChartImage} />
+            <Image height="100%" src={ChartImage} />
           </Box>
         </Box>
 
         <Box
-          gridArea="right"
-          round="medium"
           background="rgba(255,255,255,.5)"
           direction="row"
+          gridArea="right"
+          round="medium"
         >
           <Heading level="5" size="small" margin="xxsmall">
             Ready to get started?
