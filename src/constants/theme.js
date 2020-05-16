@@ -183,6 +183,16 @@ export const AVERY_DENNISON = {
       color: "selected-text",
     },
   },
+  accordion: {
+    heading: {
+      level: 6,
+      margin: "none",
+    },
+    hover: {},
+    icons: {
+      color: "#C6C6C6",
+    },
+  },
   chart: {},
   diagram: {
     line: {},
