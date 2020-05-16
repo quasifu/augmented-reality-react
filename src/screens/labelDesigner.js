@@ -28,14 +28,14 @@ export default function LabelDesigner() {
     0,
     window.location.href.indexOf(location.pathname)
   );
-  useEffect((label) => {
-    const fetchData = async (label) => {
+  useEffect(() => {
+    const fetchData = async () => {
       const result = await axios(`/api/v1/labels/metadata/${label}.json`);
       console.log(result.data);
       setMetadata(result.data);
     };
     fetchData();
-  }, []);
+  }, [label]);
 
   return (
     <Box pad="small" gap="small" fill>
