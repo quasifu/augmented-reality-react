@@ -5,6 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "../screens/home";
 import LabelDesigner from "../screens/labelDesigner.js";
 import ADesign from "../screens/adesign.js";
+import Accounts from "../screens/accounts.js";
 
 const NavSwitch = (props) => {
   return (
@@ -13,6 +14,7 @@ const NavSwitch = (props) => {
       renders the first one that matches the current URL. */}
       <Route path="/adesign/:label" children={<LabelDesigner />} />
       <Route path="/adesign" children={<ADesign />} />
+      <Route path="/accounts" children={<Accounts />} />
       <Route path="/">
         <Home />
       </Route>

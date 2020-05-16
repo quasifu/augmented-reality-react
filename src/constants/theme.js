@@ -18,6 +18,14 @@ export const AVERY_DENNISON = {
         dark: "#111311",
         light: "linear-gradient(180deg, #2F8076 0%, #1D5851 84%)",
       },
+      "secondary-button": {
+        dark: "#111311",
+        light: "linear-gradient(180deg, #9280FF 0%, #5C26D7 84%)",
+      },
+      "active-secondary-button": {
+        dark: "#111311",
+        light: "linear-gradient(180deg, #473e7e 0%, #2e136b 84%)",
+      },
       "background-strong": {
         dark: "#111311",
         light: "#ffffff",
