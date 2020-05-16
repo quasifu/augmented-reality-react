@@ -28,8 +28,8 @@ export default function LabelDesigner() {
     0,
     window.location.href.indexOf(location.pathname)
   );
-  useEffect(() => {
-    const fetchData = async () => {
+  useEffect((label) => {
+    const fetchData = async (label) => {
       const result = await axios(`/api/v1/labels/metadata/${label}.json`);
       console.log(result.data);
       setMetadata(result.data);
