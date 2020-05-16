@@ -17,23 +17,23 @@ export default function Home() {
           {
             name: "header",
             start: [0, 0],
-            end: [1, 0],
+            end: [1, 0]
           },
           {
             name: "left",
             start: [0, 1],
-            end: [0, 1],
+            end: [0, 1]
           },
           {
             name: "right",
             start: [1, 1],
-            end: [1, 1],
+            end: [1, 1]
           },
           {
             name: "body",
             start: [0, 2],
-            end: [1, 2],
-          },
+            end: [1, 2]
+          }
         ]}
         gap="small"
         pad={{ bottom: "small" }}
@@ -46,33 +46,33 @@ export default function Home() {
             </Heading>
           </Header>
         </Box>
+
         <Box
           gridArea="left"
           round="medium"
           background="rgba(255,255,255,.5)"
-          direction="column"
           pad="small"
-          background="blue"
+          background="white"
+          justify="between"
         >
-          <Box direction="column" flex background="red">
-            <Box flex background="yellow" direction="row">
-              <Box flex background="orange">
-                <TextInput
-                  icon={<Down />}
-                  style={{ borderRadius: "20px" }}
-                  reverse
-                  size="xsmall"
-                  round="medium"
-                  placeholder="All your accounts"
-                />
-              </Box>
-              <Box direction="row" flex></Box>
+          <Box direction="row">
+            <Box>
+              <TextInput
+                icon={<Down />}
+                style={{ borderRadius: "20px" }}
+                reverse
+                size="xsmall"
+                round="medium"
+                placeholder="All your accounts"
+              />
             </Box>
+            <Box></Box>
           </Box>
-          <Box flex>
+          <Box>
             <Image src={ChartImage} />
           </Box>
         </Box>
+
         <Box
           gridArea="right"
           round="medium"
