@@ -1,22 +1,21 @@
 import React from "react";
-import { Box, Heading, Button, Layer } from "grommet";
+import { Box, Button, Layer } from "grommet";
 import ARPage2 from "../screens/labels/ARPage2";
 
 export default function VirtualSample(props) {
   return (
     <Layer full animation="fadeIn">
       <Box
-        fill
+        flex
         background="#E9E9E9"
         align="center"
         justify="center"
         gap="medium"
         pad="medium"
       >
-        <Heading level={2} margin="none">
-          Virtual Sample
-        </Heading>
-        <ARPage2 label={`${props.label}.gltf`} />
+        {props.isVisible ? (
+          <ARPage2 label={`${props.label}.gltf`} />
+        ) : undefined}
         <Button
           primary
           style={{ color: "#FFF", border: "none" }}

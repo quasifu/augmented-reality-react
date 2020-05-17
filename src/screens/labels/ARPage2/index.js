@@ -5,7 +5,7 @@ import { Engine, Scene } from "react-babylonjs";
 import { Vector3, Color3, Color4 } from "@babylonjs/core";
 import { ActionManager, SetValueAction } from "@babylonjs/core/Actions";
 import ScaledModelWithProgress from "../ScaledModelWithProgress";
-import { Box } from "grommet";
+
 class ARPage2 extends Component {
   constructor(props) {
     super();
@@ -73,39 +73,37 @@ class ARPage2 extends Component {
 
   render() {
     return (
-      <Box fill>
-        <Engine
-          antialias
-          adaptToDeviceRatio
-          canvasId="babylonJS"
-          canvasStyle={{ outline: "none" }}
-        >
-          <Scene clearColor={new Color4(255, 255, 255, 0)}>
-            <arcRotateCamera
-              name="camera1"
-              alpha={Math.PI / 2}
-              beta={Math.PI / 2}
-              radius={9.0}
-              target={Vector3.Zero()}
-              minZ={0.001}
-            />
-            <hemisphericLight
-              name="light1"
-              intensity={0.7}
-              direction={Vector3.Up()}
-            />
+      <Engine
+        antialias
+        adaptToDeviceRatio
+        canvasId="babylonJS"
+        canvasStyle={{ outline: "none", width: "90%", height: "90%" }}
+      >
+        <Scene clearColor={new Color4(255, 255, 255, 0)}>
+          <arcRotateCamera
+            name="camera1"
+            alpha={Math.PI / 2}
+            beta={Math.PI / 2}
+            radius={9.0}
+            target={Vector3.Zero()}
+            minZ={0.001}
+          />
+          <hemisphericLight
+            name="light1"
+            intensity={0.7}
+            direction={Vector3.Up()}
+          />
 
-            <ScaledModelWithProgress
-              rootUrl={`/api/v1/labels/`}
-              sceneFilename={this.props.label}
-              scaleTo={5}
-              progressBarColor={Color3.FromInts(255, 165, 0)}
-              center={new Vector3(2.5, 0, 0)}
-              onModelLoaded={this.onModelLoaded}
-            />
-          </Scene>
-        </Engine>
-      </Box>
+          <ScaledModelWithProgress
+            rootUrl={`/api/v1/labels/`}
+            sceneFilename={this.props.label}
+            scaleTo={5}
+            progressBarColor={Color3.FromInts(255, 165, 0)}
+            center={new Vector3(2.5, 0, 0)}
+            onModelLoaded={this.onModelLoaded}
+          />
+        </Scene>
+      </Engine>
     );
   }
 }

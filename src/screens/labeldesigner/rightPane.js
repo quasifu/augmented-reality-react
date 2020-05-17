@@ -8,7 +8,9 @@ export default function RightPane({ metadata, label }) {
   const [showLayer, setShowLayer] = useState(false);
   return (
     <Box gap="small" pad="medium" flex>
-      <Box flex>here</Box>
+      <Box flex>
+        <Image src={`/api/v1/labels/${metadata.previewImage}`} fit="contain" />
+      </Box>
       <Box direction="row" border="horizontal" pad="small">
         <Box flex border="right" pad={{ horizontal: "small" }}>
           <Button
@@ -56,6 +58,7 @@ export default function RightPane({ metadata, label }) {
                   row={["flex"]}
                   columns={["3/4", "1/4"]}
                   areas={[["left", "right"]]}
+                  gap="small"
                 >
                   <Box gridArea="left" border="right" direction="row">
                     <Box size="small" pad={{ right: "medium" }}>
@@ -71,7 +74,7 @@ export default function RightPane({ metadata, label }) {
                         )}
                       </Text>
                       <Text size={"xsmall"}>
-                        {`Last Updated:
+                        {`Updated:
                         ${Moment(
                           item.value.properties.lastModified
                         ).fromNow()}`}
@@ -92,7 +95,13 @@ export default function RightPane({ metadata, label }) {
             ))}
         </Box>
       </Box>
-      {showLayer && <VirtualSample label={label} setShowLayer={setShowLayer} />}
+      {showLayer && (
+        <VirtualSample
+          label={label}
+          isVisible={showLayer}
+          setShowLayer={setShowLayer}
+        />
+      )}
     </Box>
   );
 }

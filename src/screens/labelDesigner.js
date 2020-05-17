@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Grid, Box, Heading, Image, Header, Button } from "grommet";
+import { Grid, Box, Heading, Header } from "grommet";
 import axios from "axios";
 import { useParams, useLocation } from "react-router-dom";
 import LeftPane from "./labeldesigner/leftPane.js";
 import RightPane from "./labeldesigner/rightPane.js";
-import SendToPhoneIcon from "../components/images/sendToPhone.svg";
+import MiddlePane from "./labeldesigner/middlePane.js";
 import QRCode from "../components/QRCode.js";
 
 export default function LabelDesigner() {
@@ -70,17 +70,9 @@ export default function LabelDesigner() {
         </Box>
 
         <Box gridArea="middle">
-          Something goes here
-          <Box direction="row">
-            <Button
-              primary
-              color="white"
-              plain={false}
-              border={{ color: "#D6D6D6" }}
-              icon={<Image src={SendToPhoneIcon} width="50%" />}
-              onClick={() => setShowLayer(true)}
-            />
-          </Box>
+          {metadata && metadata.images ? (
+            <MiddlePane metadata={metadata} setShowLayer={setShowLayer} />
+          ) : null}
         </Box>
 
         <Box gridArea="right">
