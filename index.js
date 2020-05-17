@@ -8,7 +8,7 @@ server.use(express.urlencoded({ extended: true, strict: false }));
 server.use(express.json());
 //server.use(authMiddleware);
 
-server.get("/*", (req, res) => {
+server.use("/*", (req, res) => {
   res.sendFile(`${__dirname}/build/index.html`);
 });
 //server.use("/", express.static(__dirname + "/build"));
