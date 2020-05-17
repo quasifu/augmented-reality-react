@@ -8,10 +8,10 @@ server.use(express.urlencoded({ extended: true, strict: false }));
 server.use(express.json());
 //server.use(authMiddleware);
 
-server.use("/*", (req, res) => {
+server.use("/", express.static(__dirname + "/build"));
+server.use(function (req, res, next) {
   res.sendFile(`${__dirname}/build/index.html`);
 });
-//server.use("/", express.static(__dirname + "/build"));
 
 const port = process.env.PORT ? process.env.PORT : 1336;
 
