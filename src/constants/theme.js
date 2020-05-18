@@ -8,55 +8,55 @@ export const AVERY_DENNISON = {
       brand: "#82D8D8",
       background: {
         dark: "#1a1d1a",
-        light: "#E9E9E9",
+        light: "#E9E9E9"
       },
       "primary-button": {
         dark: "#111311",
-        light: "linear-gradient(180deg, #4FD7C8 0%, #319388 84%)",
+        light: "linear-gradient(180deg, #4FD7C8 0%, #319388 84%)"
       },
       "active-primary-button": {
         dark: "#111311",
-        light: "linear-gradient(180deg, #2F8076 0%, #1D5851 84%)",
+        light: "linear-gradient(180deg, #2F8076 0%, #1D5851 84%)"
       },
       "secondary-button": {
         dark: "#111311",
-        light: "linear-gradient(180deg, #9280FF 0%, #5C26D7 84%)",
+        light: "linear-gradient(180deg, #9280FF 0%, #5C26D7 84%)"
       },
       "active-secondary-button": {
         dark: "#111311",
-        light: "linear-gradient(180deg, #473e7e 0%, #2e136b 84%)",
+        light: "linear-gradient(180deg, #473e7e 0%, #2e136b 84%)"
       },
       "background-strong": {
         dark: "#111311",
-        light: "#ffffff",
+        light: "#ffffff"
       },
       "background-weak": {
         dark: "#434643",
-        light: "#eaeaea",
+        light: "#eaeaea"
       },
       "background-menu": {
         dark: "#5A595C",
-        light: "#5A595C",
+        light: "#5A595C"
       },
       "background-xweak": {
         dark: "#6d6f6d",
-        light: "#c0c1c0",
+        light: "#c0c1c0"
       },
       text: {
         dark: "#EEEEEE",
-        light: "#5A595C",
+        light: "#5A595C"
       },
       "text-strong": {
         dark: "#FFFFFF",
-        light: "#161816",
+        light: "#161816"
       },
       "text-weak": {
         dark: "#CCCCCC",
-        light: "#434643",
+        light: "#434643"
       },
       "text-xweak": {
         dark: "#999999",
-        light: "#6d6f6d",
+        light: "#6d6f6d"
       },
       border: "background-xweak",
       control: "brand",
@@ -74,40 +74,40 @@ export const AVERY_DENNISON = {
       green: "#26413c",
       "graph-0": {
         light: "#cccccc",
-        dark: "#cccccc",
+        dark: "#cccccc"
       },
       "graph-1": {
         dark: "green",
-        light: "green",
+        light: "green"
       },
       "graph-2": {
         dark: "orange",
-        light: "orange",
-      },
+        light: "orange"
+      }
     },
     font: {
-      family: "Roboto",
+      family: "Nunito Sans",
       size: "18px",
       height: "24px",
-      maxWidth: "432px",
+      maxWidth: "432px"
     },
     graph: {
       colors: {
         light: ["brand"],
-        dark: ["brand"],
-      },
+        dark: ["brand"]
+      }
     },
     control: {
       border: {
-        radius: "4px",
-      },
+        radius: "4px"
+      }
     },
     borderSize: {
       xsmall: "1px",
       small: "2px",
       medium: "4px",
       large: "12px",
-      xlarge: "24px",
+      xlarge: "24px"
     },
     breakpoints: {
       small: {
@@ -117,7 +117,7 @@ export const AVERY_DENNISON = {
           small: "2px",
           medium: "4px",
           large: "6px",
-          xlarge: "12px",
+          xlarge: "12px"
         },
         edgeSize: {
           none: "0px",
@@ -127,7 +127,7 @@ export const AVERY_DENNISON = {
           small: "6px",
           medium: "12px",
           large: "24px",
-          xlarge: "48px",
+          xlarge: "48px"
         },
         size: {
           xxsmall: "24px",
@@ -136,13 +136,13 @@ export const AVERY_DENNISON = {
           medium: "192px",
           large: "384px",
           xlarge: "768px",
-          full: "100%",
-        },
+          full: "100%"
+        }
       },
       medium: {
-        value: 1536,
+        value: 1536
       },
-      large: {},
+      large: {}
     },
     edgeSize: {
       none: "0px",
@@ -153,11 +153,11 @@ export const AVERY_DENNISON = {
       medium: "24px",
       large: "48px",
       xlarge: "96px",
-      responsiveBreakpoint: "small",
+      responsiveBreakpoint: "small"
     },
     input: {
       padding: "12px",
-      weight: 600,
+      weight: 600
     },
     spacing: "24px",
     size: {
@@ -168,59 +168,59 @@ export const AVERY_DENNISON = {
       large: "768px",
       xlarge: "1152px",
       xxlarge: "1536px",
-      full: "100%",
+      full: "100%"
     },
     active: {
       background: "active-background",
-      color: "active-text",
+      color: "active-text"
     },
     hover: {
       background: "active-background",
-      color: "active-text",
+      color: "active-text"
     },
     selected: {
       background: "selected-background",
-      color: "selected-text",
-    },
+      color: "selected-text"
+    }
   },
   accordion: {
     heading: {
       level: 6,
-      margin: "none",
+      margin: "none"
     },
     hover: {},
     icons: {
-      color: "#C6C6C6",
-    },
+      color: "#C6C6C6"
+    }
   },
   chart: {},
   diagram: {
-    line: {},
+    line: {}
   },
   meter: {},
   button: {
     border: {
       width: "2px",
-      radius: "18px",
+      radius: "18px"
     },
     padding: {
       vertical: "4px",
-      horizontal: "22px",
+      horizontal: "22px"
     },
-    active: "#46C1B3",
+    active: "#46C1B3"
   },
   checkBox: {
     check: {
-      radius: "4px",
+      radius: "4px"
     },
     toggle: {
       radius: "24px",
-      size: "48px",
+      size: "48px"
     },
-    size: "24px",
+    size: "24px"
   },
   radioButton: {
-    size: "24px",
+    size: "24px"
   },
   heading: {
     level: {
@@ -228,270 +228,270 @@ export const AVERY_DENNISON = {
         small: {
           size: "34px",
           height: "40px",
-          maxWidth: "816px",
+          maxWidth: "816px"
         },
         medium: {
           size: "50px",
           height: "56px",
-          maxWidth: "1200px",
+          maxWidth: "1200px"
         },
         large: {
           size: "82px",
           height: "88px",
-          maxWidth: "1968px",
+          maxWidth: "1968px"
         },
         xlarge: {
           size: "114px",
           height: "120px",
-          maxWidth: "2736px",
-        },
+          maxWidth: "2736px"
+        }
       },
       "2": {
         small: {
           size: "26px",
           height: "32px",
-          maxWidth: "624px",
+          maxWidth: "624px"
         },
         medium: {
           size: "34px",
           height: "40px",
-          maxWidth: "816px",
+          maxWidth: "816px"
         },
         large: {
           size: "50px",
           height: "56px",
-          maxWidth: "1200px",
+          maxWidth: "1200px"
         },
         xlarge: {
           size: "66px",
           height: "72px",
-          maxWidth: "1584px",
-        },
+          maxWidth: "1584px"
+        }
       },
       "3": {
         small: {
           size: "22px",
           height: "28px",
-          maxWidth: "528px",
+          maxWidth: "528px"
         },
         medium: {
           size: "26px",
           height: "32px",
-          maxWidth: "624px",
+          maxWidth: "624px"
         },
         large: {
           size: "34px",
           height: "40px",
-          maxWidth: "816px",
+          maxWidth: "816px"
         },
         xlarge: {
           size: "42px",
           height: "48px",
-          maxWidth: "1008px",
-        },
+          maxWidth: "1008px"
+        }
       },
       "4": {
         small: {
           size: "18px",
           height: "24px",
-          maxWidth: "432px",
+          maxWidth: "432px"
         },
         medium: {
           size: "18px",
           height: "24px",
-          maxWidth: "432px",
+          maxWidth: "432px"
         },
         large: {
           size: "18px",
           height: "24px",
-          maxWidth: "432px",
+          maxWidth: "432px"
         },
         xlarge: {
           size: "18px",
           height: "24px",
-          maxWidth: "432px",
-        },
+          maxWidth: "432px"
+        }
       },
       "5": {
         small: {
           size: "16px",
           height: "22px",
-          maxWidth: "384px",
+          maxWidth: "384px"
         },
         medium: {
           size: "16px",
           height: "22px",
-          maxWidth: "384px",
+          maxWidth: "384px"
         },
         large: {
           size: "16px",
           height: "22px",
-          maxWidth: "384px",
+          maxWidth: "384px"
         },
         xlarge: {
           size: "16px",
           height: "22px",
-          maxWidth: "384px",
-        },
+          maxWidth: "384px"
+        }
       },
       "6": {
         small: {
           size: "14px",
           height: "20px",
-          maxWidth: "336px",
+          maxWidth: "336px"
         },
         medium: {
           size: "14px",
           height: "20px",
-          maxWidth: "336px",
+          maxWidth: "336px"
         },
         large: {
           size: "14px",
           height: "20px",
-          maxWidth: "336px",
+          maxWidth: "336px"
         },
         xlarge: {
           size: "14px",
           height: "20px",
-          maxWidth: "336px",
-        },
-      },
+          maxWidth: "336px"
+        }
+      }
     },
     font: {
-      family: "Roboto",
-    },
+      family: "Nunito Sans"
+    }
   },
   calendar: {
     small: {
       fontSize: "14px",
       lineHeight: 1.375,
-      daySize: "27.428571428571427px",
+      daySize: "27.428571428571427px"
     },
     medium: {
       fontSize: "18px",
       lineHeight: 1.45,
-      daySize: "54.857142857142854px",
+      daySize: "54.857142857142854px"
     },
     large: {
       fontSize: "30px",
       lineHeight: 1.11,
-      daySize: "109.71428571428571px",
-    },
+      daySize: "109.71428571428571px"
+    }
   },
   clock: {
     analog: {
       hour: {
         width: "8px",
-        size: "24px",
+        size: "24px"
       },
       minute: {
         width: "4px",
-        size: "12px",
+        size: "12px"
       },
       second: {
         width: "3px",
-        size: "9px",
+        size: "9px"
       },
       size: {
         small: "72px",
         medium: "96px",
         large: "144px",
         xlarge: "216px",
-        huge: "288px",
-      },
+        huge: "288px"
+      }
     },
     digital: {
       text: {
         xsmall: {
           size: "10px",
-          height: 1.5,
+          height: 1.5
         },
         small: {
           size: "14px",
-          height: 1.43,
+          height: 1.43
         },
         medium: {
           size: "18px",
-          height: 1.375,
+          height: 1.375
         },
         large: {
           size: "22px",
-          height: 1.167,
+          height: 1.167
         },
         xlarge: {
           size: "26px",
-          height: 1.1875,
+          height: 1.1875
         },
         xxlarge: {
           size: "34px",
-          height: 1.125,
-        },
-      },
-    },
+          height: 1.125
+        }
+      }
+    }
   },
   paragraph: {
     small: {
       size: "14px",
       height: "20px",
-      maxWidth: "336px",
+      maxWidth: "336px"
     },
     medium: {
       size: "18px",
       height: "24px",
-      maxWidth: "432px",
+      maxWidth: "432px"
     },
     large: {
       size: "22px",
       height: "28px",
-      maxWidth: "528px",
+      maxWidth: "528px"
     },
     xlarge: {
       size: "26px",
       height: "32px",
-      maxWidth: "624px",
+      maxWidth: "624px"
     },
     xxlarge: {
       size: "34px",
       height: "40px",
-      maxWidth: "816px",
-    },
+      maxWidth: "816px"
+    }
   },
   text: {
     xsmall: {
       size: "12px",
       height: "18px",
-      maxWidth: "288px",
+      maxWidth: "288px"
     },
     small: {
       size: "14px",
       height: "20px",
-      maxWidth: "336px",
+      maxWidth: "336px"
     },
     medium: {
       size: "18px",
       height: "24px",
-      maxWidth: "432px",
+      maxWidth: "432px"
     },
     large: {
       size: "22px",
       height: "28px",
-      maxWidth: "528px",
+      maxWidth: "528px"
     },
     xlarge: {
       size: "26px",
       height: "32px",
-      maxWidth: "624px",
+      maxWidth: "624px"
     },
     xxlarge: {
       size: "34px",
       height: "40px",
-      maxWidth: "816px",
-    },
+      maxWidth: "816px"
+    }
   },
   layer: {
     background: {
       dark: "#1a1d1a",
-      light: "#FFFFFF",
-    },
-  },
+      light: "#FFFFFF"
+    }
+  }
 };
