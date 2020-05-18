@@ -22,7 +22,9 @@ export default function VirtualSample(props) {
           color="primary-button"
           hoverIndicator="active-primary-button"
           label="Close"
-          onClick={() => props.setShowLayer(false)}
+          onClick={() =>
+            props.setShowLayer({ display: false, widget: undefined })
+          }
         />
       </Box>
     </Layer>

@@ -13,10 +13,33 @@ export default function LabelDesigner() {
   const [metadata, setMetadata] = useState([]);
   label = label.substring(0, label.indexOf(".gltf"));
   let location = useLocation();
+  let paths = location.pathname.split("/");
+  let showPopup = {
+    display: false,
+    widget: undefined,
+  };
+  console.log(paths[paths.length - 1]);
+  switch (paths[paths.length - 1]) {
+    case "colordesigner":
+      showPopup = {
+        display: true,
+        widget: "colordesigner",
+      };
+      break;
+    case "virtualsample":
+      showPopup = {
+        display: true,
+        widget: "virtualsample",
+      };
+      break;
+    default:
+      break;
+  }
   let host = window.location.href.substring(
     0,
     window.location.href.indexOf(location.pathname)
   );
+
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(`/api/v1/labels/metadata/${label}.json`);
@@ -76,7 +99,13 @@ export default function LabelDesigner() {
         </Box>
 
         <Box gridArea="right">
-          {metadata ? <RightPane metadata={metadata} label={label} /> : null}
+          {metadata && metadata.images ? (
+            <RightPane
+              metadata={metadata}
+              label={label}
+              showPopup={showPopup}
+            />
+          ) : null}
         </Box>
       </Grid>
       {showLayer && (

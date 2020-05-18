@@ -4,8 +4,11 @@ import Moment from "moment";
 import MockupIcon from "../../components/images/mockup.svg";
 import FolderIcon from "../../components/images/folder.svg";
 import VirtualSample from "../../components/VirtualSample";
-export default function RightPane({ metadata, label }) {
-  const [showLayer, setShowLayer] = useState(false);
+import ColorDesigner from "../../components/colorDesigner.js";
+
+export default function RightPane({ metadata, label, showPopup }) {
+  console.log(metadata);
+  const [showLayer, setShowLayer] = useState(showPopup);
   return (
     <Box gap="small" pad="medium" flex>
       <Box flex>
@@ -31,13 +34,15 @@ export default function RightPane({ metadata, label }) {
             hoverIndicator="active-primary-button"
             label="3D"
             size="small"
-            onClick={() => setShowLayer(true)}
+            onClick={() =>
+              setShowLayer({ display: true, widget: "virtualsample" })
+            }
           />
         </Box>
       </Box>
       <Box round="medium" background="white" pad="small" flex>
-        <Box direction="row">
-          <Image src={FolderIcon} />
+        <Box direction="row" gap="small">
+          <Image src={FolderIcon} style={{ width: "30px" }} />
           <Heading level="4" size="medium">
             Project Files
           </Heading>
@@ -67,11 +72,23 @@ export default function RightPane({ metadata, label }) {
                       </Text>
                     </Box>
                     <Box flex direction="column">
-                      <Text size={"small"} weight="bold">
-                        {item.value.name.substring(
-                          0,
-                          item.value.name.indexOf(".gltf")
-                        )}
+                      <Text
+                        size={"small"}
+                        weight="bold"
+                        style={
+                          item.value.action
+                            ? { cursor: "pointer" }
+                            : { cursor: "default" }
+                        }
+                        onClick={() =>
+                          item.value.action &&
+                          setShowLayer({
+                            display: true,
+                            widget: item.value.action,
+                          })
+                        }
+                      >
+                        {item.value.name}
                       </Text>
                       <Text size={"xsmall"}>
                         {`Updated:
@@ -95,10 +112,17 @@ export default function RightPane({ metadata, label }) {
             ))}
         </Box>
       </Box>
-      {showLayer && (
+      {showLayer.display && showLayer.widget === "virtualsample" && (
         <VirtualSample
           label={label}
-          isVisible={showLayer}
+          isVisible={showLayer.display}
+          setShowLayer={setShowLayer}
+        />
+      )}
+      {showLayer.display && showLayer.widget === "colordesigner" && (
+        <ColorDesigner
+          metadata={metadata}
+          isVisible={showLayer.display}
           setShowLayer={setShowLayer}
         />
       )}
