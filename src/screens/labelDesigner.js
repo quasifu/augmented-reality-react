@@ -1,21 +1,54 @@
-import React, { useState } from "react";
-import { Grid, Box, Heading, Image, Header, Button } from "grommet";
-import ARPage2 from "./labels/ARPage2";
+import React, { useState, useEffect } from "react";
+import { Grid, Box, Heading, Header } from "grommet";
+import axios from "axios";
 import { useParams, useLocation } from "react-router-dom";
-import ProjectDetails from "../components/images/project-details.svg";
-import ProjectDetailsRight from "../components/images/project-details-right.svg";
-import SendToPhoneIcon from "../components/images/sendToPhone.svg";
+import LeftPane from "./labeldesigner/leftPane.js";
+import RightPane from "./labeldesigner/rightPane.js";
+import MiddlePane from "./labeldesigner/middlePane.js";
 import QRCode from "../components/QRCode.js";
 
 export default function LabelDesigner() {
   let { label } = useParams();
   const [showLayer, setShowLayer] = useState(false);
+  const [metadata, setMetadata] = useState([]);
   label = label.substring(0, label.indexOf(".gltf"));
   let location = useLocation();
+  let paths = location.pathname.split("/");
+  let showPopup = {
+    display: false,
+    widget: undefined,
+  };
+  console.log(paths[paths.length - 1]);
+  switch (paths[paths.length - 1]) {
+    case "colordesigner":
+      showPopup = {
+        display: true,
+        widget: "colordesigner",
+      };
+      break;
+    case "virtualsample":
+      showPopup = {
+        display: true,
+        widget: "virtualsample",
+      };
+      break;
+    default:
+      break;
+  }
   let host = window.location.href.substring(
     0,
     window.location.href.indexOf(location.pathname)
   );
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(`/api/v1/labels/metadata/${label}.json`);
+      console.log(result.data);
+      setMetadata(result.data);
+    };
+    fetchData();
+  }, [label]);
+
   return (
     <Box pad="small" gap="small" fill>
       <Grid
@@ -50,40 +83,29 @@ export default function LabelDesigner() {
         <Box gridArea="header">
           <Header pad="small">
             <Heading level={2} size={"medium"} margin="none">
-              {label}
+              {metadata ? metadata.projectName : "Designer"}
             </Heading>
           </Header>
         </Box>
 
         <Box gridArea="left">
-          <Box
-            gap="small"
-            round="medium"
-            background="white"
-            pad="medium"
-            flex
-            overflow="scroll"
-          >
-            <Image src={ProjectDetails} width="100%" />
-          </Box>
+          <LeftPane metadata={metadata} />
         </Box>
 
         <Box gridArea="middle">
-          <ARPage2 label={`${label}.gltf`} />
-          <Box direction="row">
-            <Button
-              primary
-              color="white"
-              plain={false}
-              border={{ color: "#D6D6D6" }}
-              icon={<Image src={SendToPhoneIcon} width="50%" />}
-              onClick={() => setShowLayer(true)}
-            />
-          </Box>
+          {metadata && metadata.images ? (
+            <MiddlePane metadata={metadata} setShowLayer={setShowLayer} />
+          ) : null}
         </Box>
 
         <Box gridArea="right">
-          <Image src={ProjectDetailsRight} fill />
+          {metadata && metadata.images ? (
+            <RightPane
+              metadata={metadata}
+              label={label}
+              showPopup={showPopup}
+            />
+          ) : null}
         </Box>
       </Grid>
       {showLayer && (

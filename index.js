@@ -9,6 +9,9 @@ server.use(express.json());
 //server.use(authMiddleware);
 
 server.use("/", express.static(__dirname + "/build"));
+server.use(function (req, res, next) {
+  res.sendFile(`${__dirname}/build/index.html`);
+});
 
 const port = process.env.PORT ? process.env.PORT : 1336;
 

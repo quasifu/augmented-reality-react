@@ -41,7 +41,7 @@ export default function LabelsList(props) {
                   <Box gridArea="left" border="right" direction="row">
                     <Box size="small" pad={{ right: "medium" }}>
                       <Text size={"small"} weight="bold">
-                        {idx + 1}.{console.log(item)}
+                        {idx + 1}.
                       </Text>
                     </Box>
                     <Box flex direction="column">
