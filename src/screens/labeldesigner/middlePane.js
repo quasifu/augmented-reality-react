@@ -123,7 +123,9 @@ export default function MiddlePane({ metadata, setShowLayer }) {
               borderRight: "1px solid #c0c1c0",
             }}
             icon={<Image src={ShareIcon} style={{ height: "20px" }} />}
-            onClick={() => {}}
+            onClick={() => {
+              setShowLayer(true);
+            }}
           />
           <Button
             plain
